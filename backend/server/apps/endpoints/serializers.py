@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from backend.server.apps.endpoints.models import Endpoint, MLAlgorithm, MLAlgorithmStatus, MLRequest
+from apps.endpoints.models import Endpoint, MLAlgorithm, MLAlgorithmStatus, MLRequest
 
 
 class EndpointSerializer(serializers.ModelSerializer):

@@ -2,8 +2,8 @@ from django.db import transaction
 from rest_framework import mixins, viewsets
 from rest_framework.exceptions import APIException
 
-from backend.server.apps.endpoints.models import Endpoint, MLAlgorithm, MLAlgorithmStatus, MLRequest
-from backend.server.apps.endpoints.serializers import EndpointSerializer, MLAlgorithmSerializer, \
+from apps.endpoints.models import Endpoint, MLAlgorithm, MLAlgorithmStatus, MLRequest
+from apps.endpoints.serializers import EndpointSerializer, MLAlgorithmSerializer, \
     MLAlgorithmStatusSerializer, MLRequestSerializer
 
 
