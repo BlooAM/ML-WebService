@@ -7,9 +7,9 @@ class MLTests(TestCase):
     def test_rf_algorithm(self):
         input_data = {
             "age": 37,
-            "workclass": "private",
-            "fnlwgt": 34164,
-            "education": "HS-grad",
+            "workclass": "Private",
+            "fnlwgt": 34146,
+            "education": 'HS-grad',
             "education-num": 9,
             "marital-status": "Married-civ-spouse",
             "occupation": "Craft-repair",
@@ -19,7 +19,7 @@ class MLTests(TestCase):
             "capital-gain": 0,
             "capital-loss": 0,
             "hours-per-week": 68,
-            "native-country": "United-States",
+            "native-country": "United-States"
         }
         my_alg = RandomForestClassifier()
         response = my_alg.compute_prediction(input_data)

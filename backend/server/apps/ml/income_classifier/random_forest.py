@@ -22,8 +22,7 @@ class RandomForestClassifier:
                        ]:
             categorical_convert = self.encoders[column]
             input_data[column] = categorical_convert.transform(input_data[column])
-
-            return input_data
+        return input_data
 
     def predict(self, input_data):
         return self.model.predict_proba(input_data)
