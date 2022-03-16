@@ -1,6 +1,7 @@
 from django.db import transaction
 from django.shortcuts import render
 from rest_framework import viewsets, mixins
+from rest_framework.exceptions import APIException
 
 from apps.endpoints.models import Endpoint, MLAlgorithm, MLAlgorithmStatus, MLRequest
 from apps.endpoints.serializers import EndpointSerializer, MLAlgorithmSerializer, MLAlgorithmStatusSerializer, MLRequestSerializer
@@ -37,3 +38,8 @@ class MLAlgorithmStatusViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin,
                 deactivate_other_statuses(instance)
         except Exception as e:
             raise APIException(str(e))
+
+
+class MLRequestViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet, mixins.UpdateModelMixin):
+    serializer_class = MLRequestSerializer
+    queryset = MLRequest.objects.all()
